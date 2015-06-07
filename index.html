@@ -21,6 +21,20 @@
   <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+  <style>
+  html,body{
+    margin:0;
+}
+.fullpage{
+    min-height:100%;
+    min-width:100%;
+    height:auto;
+    width:auto;
+    position:absolute;
+    top:-50%; bottom:-50%;
+    left:-50%; right:-50%;
+    margin:auto;
+}</style>
 </head>
 
 <body>
@@ -70,16 +84,18 @@
   <div class="wrapper" style="width:100%;">
     <div class="parallax" style="height:100vh; width:auto">
       <div class="parallax-image" style="height:100vh">
-        <img style="height:100vh; width:130%; max-width:100%" src="assets/img/bg.jpg">
+        <img class="fullpage" src="assets/img/bg.jpg">
       </div>
       <div style="position:absolute; width:100%; right:auto; left:auto; z-index: 10; top:25vh" class="club">
         <div style="text-shadow: 0 0 10px rgba(0, 0, 0, 0.27); font-size: 4.2em; color :white; text-align:center;"><b>Expand your Technological <br>Knowledge</b></div>
         <br>
         <br>
         <br>
-        <div style="right:auto; left:auto;">
+        <br>
+        <br>
+        <br>
+        <div style="right:auto; left:auto; text-align:center;">
           <button style="right:auto; left:auto;" class="btn btn-primary btn-fill btn-round btn-lg" data-toggle="modal" data-target="#registerModal">
-
             Join Us
 
           </button>
@@ -97,7 +113,7 @@
 <div style="display: none;" class="modal modal-small fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div id="temporary"  class="modal-header"> 
+      <div class="modal-header temporary"> 
         <h4 class="modal-title text-center">Why not join us</h4>
       </div>
       <div class="modal-body">       
@@ -105,8 +121,7 @@
             var submitted=false;
           </script>
           <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
-{$('#temporary').remove();
-$('#temporary1').remove();
+{$('.temporary').remove();
 setTimeout(
   function() 
   {
@@ -120,25 +135,21 @@ setTimeout(
         });
   }, 3000);}"></iframe>
           <form action="https://docs.google.com/a/vtsd.com/forms/d/1dLHyON5QCBCQ3yPZr33pF8zy6zWsc_1Q5rRw7MwMR4c/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
-          <div id="temporary1">
-          <div class="form-group">
+          <div class="form-group temporary">
             <input id="entry_2080671039" name="entry.2080671039"value="" placeholder="Your First Name" class="form-control" type="text">
           </div>
-           <div class="form-group">
+           <div class="form-group temporary">
             <input value="" id="entry_367722409" name="entry.367722409" placeholder="Your Last Name" class="form-control" type="text">
           </div> 
-           <div class="form-group">
+           <div class="form-group temporary">
             <input value="" placeholder="Your Email" class="form-control" type="email">
-          </div> 
-          </div>
-          <div class="row">
+            </div>
           <button value="Submit" name="submit" id="ss-submit" type="submit" class="btn btn-fill btn-simple btn-info" data-toggle="morphing" data-rotation-color="azure">Submit</button><h3 style="margin: 0 0 0 0;" id="thankyou"></h3>
             <input name="pageHistory" value="0" type="hidden">
             <input name="fbzx" value="4017519161653855035" type="hidden"></div>
       </form>
       </div>
     </div>
-  </div>
 </div>
 
   </div>
