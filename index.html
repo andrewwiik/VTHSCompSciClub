@@ -113,7 +113,7 @@
 <div style="display: none;" class="modal modal-small fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header"> 
+      <div id="temporary"  class="modal-header"> 
         <h4 class="modal-title text-center">Why not join us</h4>
       </div>
       <div class="modal-body">       
@@ -121,7 +121,7 @@
             var submitted=false;
           </script>
           <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
-{$('.temporary').remove();
+{$('#temporary').remove();
 setTimeout(
   function() 
   {
@@ -144,9 +144,9 @@ setTimeout(
            <div class="form-group temporary">
             <input value="" placeholder="Your Email" class="form-control" type="email">
             </div>
+          <button value="Submit" name="submit" id="ss-submit" type="submit" class="btn btn-fill btn-simple btn-info" data-toggle="morphing" data-rotation-color="azure">Submit</button><h3 style="margin: 0 0 0 0;" id="thankyou"></h3>
             <input name="pageHistory" value="0" type="hidden">
             <input name="fbzx" value="4017519161653855035" type="hidden"></div>
-          <button value="Submit" name="submit" id="ss-submit" type="submit" class="btn btn-fill btn-simple btn-info" data-toggle="morphing" data-rotation-color="azure">Submit</button>
       </form>
       </div>
     </div>
