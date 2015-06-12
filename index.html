@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   
   <head>
@@ -87,6 +87,13 @@
   .navbar-transparent .navbar-nav > li > a:hover:not(.btn) {
     color:white !important;
 }
+  .navbar-transparent .navbar-nav > li > a:focus:not(.btn) {
+color:white !important;
+}
+.autosize {
+  width:auto;
+  height:auto;
+}
     </style>
   </head>
   
@@ -167,7 +174,7 @@
     <!-- What Computer Club Does -->
     <div id="whatwedo" class="section" style="height:100vh;">
     <div class="container">
-    <h1 style="text-align:center; color: #9A9A9A;
+    <h1 style="text-align:center;
 font-weight: 300;
 line-height: 1.5;">Some things that we teach
             </h1>
@@ -263,6 +270,7 @@ line-height: 1.5;">Some things that we teach
            </div>
     
         </div>
+        <!-- Linux -->
          <div class="col-md-4">
     
            <div class="info info-horizontal">
@@ -285,6 +293,7 @@ line-height: 1.5;">Some things that we teach
            </div>
     
         </div>
+        <!-- Command Line -->
            <div class="col-md-4">
     
            <div class="info info-horizontal">
@@ -313,21 +322,22 @@ line-height: 1.5;">Some things that we teach
     </div>
     </div>
 <div style="display: none;" class="modal modal-small fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div id="temporary"  class="modal-header">
+  <div class="modal-dialog resize">
+    <div class="modal-content resize">
+      <div id="temporary"  class="modal-header temporary">
         
         <h4 class="modal-title text-center">
           Why not join us
         </h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body resize">
         
         <script type="text/javascript">
           var submitted=false;
         </script>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
-{$('.temporary').remove();
+{$('.resize').addClass('autosize');
+$('.temporary').remove();
 setTimeout(
 function() 
 {
@@ -341,7 +351,7 @@ state: 'success'
 });
 }, 3000);}">
         </iframe>
-        <form action="https://docs.google.com/a/vtsd.com/forms/d/1dLHyON5QCBCQ3yPZr33pF8zy6zWsc_1Q5rRw7MwMR4c/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+        <form class="resize" action="https://docs.google.com/a/vtsd.com/forms/d/1dLHyON5QCBCQ3yPZr33pF8zy6zWsc_1Q5rRw7MwMR4c/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
           <div class="form-group temporary">
             <input id="entry_2080671039" name="entry.2080671039"value="" placeholder="Your First Name" class="form-control" type="text">
             </div>
