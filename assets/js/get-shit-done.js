@@ -8,7 +8,9 @@ var navbar_initialized = false;
 
 $(document).ready(function(){
     window_width = $(window).width();
-    
+    nav_height = $("#nav").height();
+    window_height = $(window).height();
+    winH = window_height - nav_height - nav_height;
     // Init navigation toggle for small screens   
     if(window_width < 768){
         gsdk.initRightMenu();   
@@ -156,7 +158,7 @@ gsdk = {
     },
     
     checkScrollForTransparentNavbar: debounce(function() {	
-        	if($(document).scrollTop() > 260 ) {
+        	if($(document).scrollTop() >= winH ) {
                 if(transparent) {
                     transparent = false;
                     $('nav[role="navigation"]').removeClass('navbar-transparent');
