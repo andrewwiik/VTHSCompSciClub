@@ -11,6 +11,10 @@ $(document).ready(function(){
     nav_height = $("#nav").height();
     window_height = $(window).height();
     winH = window_height - nav_height - nav_height;
+    var section=$(section);
+
+    $( ".section" ).css('padding-top',nav_height+'px');;
+
     // Init navigation toggle for small screens   
     if(window_width < 768){
         gsdk.initRightMenu();   
