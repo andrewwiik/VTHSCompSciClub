@@ -10,7 +10,7 @@ $(document).ready(function(){
     window_width = $(window).width();
     nav_height = $("#nav").height();
     window_height = $(window).height();
-    winH = window_height - nav_height - nav_height;
+    winH = window_height - nav_height;
     var section=$(section);
 
     $( ".section" ).css('padding-top',nav_height+'px');;
