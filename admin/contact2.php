@@ -14,11 +14,11 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-    .contact-box.ng-enter {
+    .topcontact.ng-enter {
   animation: fadeIn 1s;
 }
 
-.contact-box.ng-leave {
+.topcontact.ng-leave {
   animation: fadeOut 1s;
 }
 </style>
@@ -362,7 +362,7 @@
             </div>
         <div class="wrapper wrapper-content animated fadeInRight" ng-controller="contactController">
         <div class="row">
-            <div class="col-lg-4" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
+            <div class="col-lg-4 topcontact" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
                 <div class="contact-box">
                     <a href="profile.html">
                     <div class="col-sm-4">
