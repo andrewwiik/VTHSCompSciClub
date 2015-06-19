@@ -353,7 +353,7 @@
             </div>
         <div class="wrapper wrapper-content animated fadeInRight" ng-controller="contactController">
         <div class="row">
-            <div class="col-lg-4 animated fadeOutRight" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
+            <div class="col-lg-4" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
                 <div class="contact-box">
                     <a href="profile.html">
                     <div class="col-sm-4">
