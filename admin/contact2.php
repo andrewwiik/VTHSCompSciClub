@@ -399,6 +399,9 @@
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <!-- Linking to the football app script -->
+    <script src="js/contactApp.js"></script>
 
 
     <script>
