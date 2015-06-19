@@ -14,7 +14,7 @@ $result = mysql_query($sql);
 $json = array();
 if (mysql_num_rows ($result)) {
 	while ($row = mysql_fetch_assoc($result)) {
-		$json[] = array('fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber']);
+		$json[] = array('fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'photo' => $row['photo']);
 	}
 }
 echo json_encode($json);
