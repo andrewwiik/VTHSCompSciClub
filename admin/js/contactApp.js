@@ -1,6 +1,6 @@
 "use strict";
 
-var contactApp = angular.module('contactApp', []);
+var contactApp = angular.module('contactApp', ["ngAnimate"]);
     contactApp.controller('contactController', [ "$scope", "$http", function ($scope, $http){
       $http({method: 'GET', url: 'contacts.php'}).success(function(data){
         $scope.contact = data;

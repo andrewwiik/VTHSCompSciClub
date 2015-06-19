@@ -13,6 +13,15 @@
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+    .contact-box.ng-enter {
+  animation: fadeIn 1s;
+}
+
+.contact-box.ng-leave {
+  animation: fadeOut 1s;
+}
+</style>
 
 </head>
 
@@ -353,7 +362,7 @@
             </div>
         <div class="wrapper wrapper-content animated fadeInRight" ng-controller="contactController">
         <div class="row">
-            <div class="col-lg-4 animated fadeOutRight" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
+            <div class="col-lg-4" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
                 <div class="contact-box">
                     <a href="profile.html">
                     <div class="col-sm-4">
@@ -400,6 +409,7 @@
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-animate.min.js"></script>
     <!-- Linking to the football app script -->
     <script src="js/contactApp.js"></script>
 
