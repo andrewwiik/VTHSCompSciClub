@@ -352,6 +352,7 @@
                 </div>
             </div>
         <div ng-app="contactApp" class="wrapper wrapper-content animated fadeInRight">
+        <div ng-view></div>
         <div class="row">
         <tr ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
 <td><a href="{{ contact.fname }}" target="_blank">{{ contact.fname }}</a></td>
