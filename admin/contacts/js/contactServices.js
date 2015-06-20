@@ -5,7 +5,7 @@ angular.module('contactServices', [])
 // Factory responsible for assembling the form data before it's passed over the php
 .factory('assembleFormDataService', function(){
 	return {
-		populateFormData: function(fname, lname, address, city, zipcode, mnumber, lnumber, relation, photoSubmit){
+		populateFormData: function(fname, lname, address, city, zipcode, mnumber, lnumber, relation, email, photoSubmit){
 			var formData = new FormData();
 			formData.append("fname", fname);
 			formData.append("lname", lname);
@@ -15,6 +15,7 @@ angular.module('contactServices', [])
 			formData.append("mnumber", mnumber);
 			formData.append("lnumber", lnumber);
 			formData.append("relation", relation);
+			formData.append("email", email);
 			formData.append("photo", photoSubmit);
 			return formData; 
 		}
