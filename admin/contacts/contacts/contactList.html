@@ -1,5 +1,3 @@
-<p>Use the input below to filter and narrow your search:</p>
-<input type="text" ng-model="contactFilter" class="form-control"/>
 <div ng-controller="contactListController">
 <!-- Div that displays for 3 seconds while the data is pulled in -->
   <div id="loadingDiv" ng-show="loading" class="alert alert-success">
@@ -19,17 +17,29 @@
     <th><a href="" ng-click="sortField='relation'; reverse = !reverse">Relation</a></th>
     <th><a href="" ng-click="sortField='photo'; reverse = !reverse">Photo</a></th>
     </thead>
-   <tr ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
-<td><a href="{{ contact.fname }}" target="_blank">{{ contact.fname }}</a></td>
-<td>{{ contact.lname }}</td>
-<td>{{ contact.address }}</td>
-<td>{{ contact.city }}</td>
-<td>{{ contact.zipcode }}</td>
-<td>{{ contact.mnumber }}</td>
-<td>{{ contact.lnumber }}</td>
-<td>{{ contact.relation }}</td>
-<td>{{ contact.photo }}</td>
-</tr>
+   <div class="col-lg-4 topcontact" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
+                <div class="contact-box">
+                    <a href="profile.html">
+                    <div class="col-sm-4">
+                        <div class="text-center">
+                            <img alt="image" class="img-circle m-t-xs img-responsive" src="{{ contact.photo }}">
+                            <div class="m-t-xs font-bold">{{ contact.relation }}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <h3><strong>{{ contact.fname }}  {{ contact.lname }}</strong></h3>
+                        <p><i class="fa fa-map-marker"></i> {{ contact.city }}  {{ contact.zipcode }}</p>
+                        <address>
+                            <strong>{{ contact.fname }} {{ contact.lname }}</strong><br>
+                            {{ contact.address }}<br>
+                            {{ contact.city }}, {{ contact.zipcode }}<br>
+                            <abbr title="Phone">P:</abbr> {{ contact.mnumber }}
+                        </address>
+                    </div>
+                    <div class="clearfix"></div>
+                        </a>
+                </div>
+            </div>
   </table>
   </div>
 </div>
