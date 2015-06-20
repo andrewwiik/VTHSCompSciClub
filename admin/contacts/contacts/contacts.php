@@ -9,7 +9,7 @@ switch($_GET["action"]){
 		$query = "SELECT * FROM contactList";
 		$result = $mysqli->query($query);
 		while ($row = $result->fetch_assoc()) {
-		$json[] = array('fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'photo' => $row['photo']);
+		$json[] = array('fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'email' => $row['email'], 'photo' => $row['photo']);
 		}
 		echo json_encode($json);
 		$mysqli->close();
@@ -22,7 +22,7 @@ switch($_GET["action"]){
 		$query->execute();
 		$result = $query->get_result();
 		while ($row = $result->fetch_assoc()){
-		 	$json = array('id' => $row['id'], 'fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'photo' => $row['photo']);
+		 	$json = array('id' => $row['id'], 'fname' => $row['fname'], 'lname' => $row['lname'], 'address' => $row['address'], 'city' => $row['city'], 'zipcode' => $row['zipcode'], 'mnumber' => $row['mnumber'], 'lnumber' => $row['lnumber'], 'relation' => $row['relation'], 'email' => $row['email'], 'photo' => $row['photo']);
 		 }
 		 echo json_encode($json);
 		 $mysqli->close();
@@ -44,8 +44,8 @@ switch($_GET["action"]){
 		$data = base64_decode($img);
 		$success = file_put_contents($file, $data);
 
-		$query = $mysqli->prepare('INSERT INTO contactList (fname, lname, address, city, zipcode, mnumber, lnumber, relation, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
-		$query->bind_param('sssssssss', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['relation'], $file);
+		$query = $mysqli->prepare('INSERT INTO contactList (fname, lname, address, city, zipcode, mnumber, lnumber, relation, email, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+		$query->bind_param('ssssssssss', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['email'], $_POST['relation'], $file);
 		$query->execute();
 		$mysqli->close();
 	break;
@@ -70,8 +70,8 @@ switch($_GET["action"]){
 		} else {
 			$file = $_POST['photo'];
 		}
-		$query = $mysqli->prepare('UPDATE contactList SET fname = ?, lname = ?, address = ?, city = ?, zipcode = ?, mnumber = ?, lnumber = ?, relation = ?, relation = ?, photo = ? WHERE id = ?');
-		$query->bind_param('sssssssssi', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['relation'], $file, $id);
+		$query = $mysqli->prepare('UPDATE contactList SET fname = ?, lname = ?, address = ?, city = ?, zipcode = ?, mnumber = ?, lnumber = ?, relation = ?, relation = ?, email = ?, photo = ? WHERE id = ?');
+		$query->bind_param('ssssssssssi', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['relation'], $_POST['email'], $file, $id);
 		$query->execute();
 		$mysqli->close();
 	break;
