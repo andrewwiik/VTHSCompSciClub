@@ -7,7 +7,7 @@
   <div ng-show="!loading"> 
    <div class="col-lg-4 topcontact" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
                 <div class="contact-box">
-                    <a href="profile.html">
+                    <a href="#/detail:{{ contact.id }}">
                     <div class="col-sm-4">
                         <div class="text-center">
                             <img alt="image" class="img-circle m-t-xs img-responsive" src="contacts/{{ contact.photo }}">
