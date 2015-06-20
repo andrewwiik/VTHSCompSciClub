@@ -34,6 +34,6 @@ contactApp.config(['$routeProvider',
 				controllers: 'deleteContactController'	
 			}).
 			otherwise({
-				redirectTo: '/welcome'
+				redirectTo: '/contacts'
 		});
 	}]);
