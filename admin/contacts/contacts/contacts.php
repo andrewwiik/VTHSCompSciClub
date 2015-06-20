@@ -45,7 +45,7 @@ switch($_GET["action"]){
 		$success = file_put_contents($file, $data);
 
 		$query = $mysqli->prepare('INSERT INTO contactList (fname, lname, address, city, zipcode, mnumber, lnumber, relation, email, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-		$query->bind_param('ssssssssss', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['email'], $_POST['relation'], $file);
+		$query->bind_param('ssssssssss', $_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['city'], $_POST['zipcode'], $_POST['mnumber'], $_POST['lnumber'], $_POST['relation'], $_POST['email'], $file);
 		$query->execute();
 		$mysqli->close();
 	break;
