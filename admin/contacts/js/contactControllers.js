@@ -41,7 +41,7 @@ contactControllers.controller('editContactController', ["$scope", "$routeParams"
       $scope.contactedit = data;
     });
   $scope.editContact = function(){
-    var readyFormData = assembleFormDataService.populateFormData($scope.contactedit.fname, $scope.contactedit.lname, $scope.contactedit.address, $scope.contactedit.city, $scope.contactedit.zipcode, $scope.contactedit.mnumber, $scope.contactedit.lnumber, $scope.contacteditt.relation, $scope.contactedit.photo);  
+    var readyFormData = assembleFormDataService.populateFormData($scope.contactedit.fname, $scope.contactedit.lname, $scope.contactedit.address, $scope.contactedit.city, $scope.contactedit.zipcode, $scope.contactedit.mnumber, $scope.contactedit.lnumber, $scope.contactedit.relation, $scope.contactedit.email, $scope.contactedit.photo);  
       contactService.editContact($routeParams.contactId, readyFormData, function(){
         $location.path('/contacts');         
     });
