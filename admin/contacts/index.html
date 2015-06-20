@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="contactApp">
+<html>
 
 <head>
 
@@ -351,7 +351,7 @@
                     </ol>
                 </div>
             </div>
-        <div class="wrapper wrapper-content animated fadeInRight">
+        <div ng-app="contactApp" class="wrapper wrapper-content animated fadeInRight">
         <li ng-class="{ active: isActive('/welcome')}"><a href="#/welcome">Home</a></li>
             <li ng-class="{ active: isActive('/contacts')}"><a href="#/contacts">View Team List</a></li>
             <li ng-class="{ active: isActive('/add')}"><a href="#/add">Add a Team</a></li>
