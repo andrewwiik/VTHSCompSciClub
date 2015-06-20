@@ -30,7 +30,7 @@ switch($_GET["action"]){
 	// Switch case for the add team controller
 	case "add":
 		$dataString = $_POST['photo'];
-		define('UPLOAD_DIR', '/var/www/html/VTHSCompSciClub/admin/contactimg/');
+		define('UPLOAD_DIR', 'VTHSCompSciClub/admin/contactimg/');
 		$img = $dataString;
 		if (preg_match('/png/', $dataString)){
 			$img = str_replace('data:image/png;base64,', '', $img);
@@ -55,7 +55,7 @@ switch($_GET["action"]){
 		$dataString = $_POST['photo'];
 
 		if (stripos($dataString, 'base64') !== false){
-			define('UPLOAD_DIR', '/var/www/html/VTHSCompSciClub/admin/contactimg/');
+			define('UPLOAD_DIR', 'VTHSCompSciClub/admin/contactimg/');
 			$img = $dataString;
 			if (preg_match('/png/', $dataString)){
 				$img = str_replace('data:image/png;base64,', '', $img);
