@@ -351,7 +351,10 @@
                     </ol>
                 </div>
             </div>
-        <div class="wrapper wrapper-content animated fadeInRight" ng-controller="contactController">
+        <div class="wrapper wrapper-content animated fadeInRight">
+        <li ng-class="{ active: isActive('/welcome')}"><a href="#/welcome">Home</a></li>
+            <li ng-class="{ active: isActive('/contacts')}"><a href="#/contacts">View Team List</a></li>
+            <li ng-class="{ active: isActive('/add')}"><a href="#/add">Add a Team</a></li>
         <div class="row">
             <div class="col-lg-4" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
                 <div class="contact-box">
