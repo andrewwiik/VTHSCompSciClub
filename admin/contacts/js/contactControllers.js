@@ -18,7 +18,7 @@ contactControllers.controller('contactListController', [ "$scope", "$timeout", "
 contactControllers.controller('contactDetailController', ["$scope", "$timeout", "$routeParams", "contactService",
 	function ($scope, $timeout, $routeParams, contactService){
     $timeout(function(){
-      contactService.contactsDetail($routeParams.contactId, function(data){
+      contactService.contactsDetails($routeParams.contactId, function(data){
         $scope.contact = data;
         $scope.loading = false;
       });
