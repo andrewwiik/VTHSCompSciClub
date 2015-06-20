@@ -1,3 +1,10 @@
+<style>
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
 <div ng-controller="contactListController">
 <!-- Div that displays for 3 seconds while the data is pulled in -->
   <div id="loadingDiv" ng-show="loading" class="alert alert-success">
@@ -22,7 +29,7 @@
                          <strong>Contact Info</strong><br>
                             <abbr title="Mobile Phone">M:</abbr> {{ contact.mnumber }}<br>
                             <abbr title="Home Phone">L:</abbr> {{ contact.lnumber }}<br>
-                            <abbr title="Email">E:</abbr> {{ contact.email }}<br>
+                           <div class="truncate"><abbr title="Email">E:</abbr> {{ contact.email }}</div>
                         </address>
                     </div>
                     <div class="clearfix"></div>
