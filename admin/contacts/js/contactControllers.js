@@ -28,7 +28,7 @@ contactControllers.controller('contactDetailController', ["$scope", "$timeout", 
 contactControllers.controller('addContactController', ["$scope", "$http", "$location", "contactService", "assembleFormDataService",
   function ($scope, $http, $location, contactService, assembleFormDataService){
     $scope.addContact = function(){
-     var readyFormData = assembleFormDataService.populateFormData($scope.fname, $scope.lname, $scope.address, $scope.city, $scope.zipcode, $scope.mnumber, $scope.lnumber, $scope.relation, $scope.photoSubmit);  
+     var readyFormData = assembleFormDataService.populateFormData($scope.fname, $scope.lname, $scope.address, $scope.city, $scope.zipcode, $scope.mnumber, $scope.lnumber, $scope.relation, $scope.email, $scope.photoSubmit);  
       contactService.addContacts(readyFormData, function(){
         $location.path('/contacts');         
       });
