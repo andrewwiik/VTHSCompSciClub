@@ -358,8 +358,8 @@
                     <a href="profile.html">
                     <div class="col-sm-4">
                         <div class="text-center">
-                            <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg">
-                            <div class="m-t-xs font-bold">Girlfriend</div>
+                            <img alt="image" class="img-circle m-t-xs img-responsive" src="{{ contact.photo }}">
+                            <div class="m-t-xs font-bold">{{ contact.relation }}</div>
                         </div>
                     </div>
                     <div class="col-sm-8">
@@ -399,6 +399,15 @@
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <!-- Include Angular Upload script -->
+    <script src="js/angular/angular-file-upload.min.js"></script>
+    <!-- Include Angular Routing -->
+    <script src="js/angular/angular-route.min.js"></script>
+    <script src="js/contactApp.js"></script>
+    <script src="js/contactControllers.js"></script>
+    <script src="js/contactServices.js"></script>
+    <script src="js/contactDirectives.js"></script>
 
 
     <script>
@@ -408,6 +417,7 @@
             });
         });
     </script>
+
 
 </body>
 

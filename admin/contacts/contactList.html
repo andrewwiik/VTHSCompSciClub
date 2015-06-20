@@ -1,0 +1,35 @@
+<p>Use the input below to filter and narrow your search:</p>
+<input type="text" ng-model="contactFilter" class="form-control"/>
+<div ng-controller="contactListController">
+<!-- Div that displays for 3 seconds while the data is pulled in -->
+  <div id="loadingDiv" ng-show="loading" class="alert alert-success">
+    Loading, please wait...
+  </div>
+  <!-- Div that displays after the three second delay. Using AngularJS's data binding to display the team informaiton from the table -->
+  <div ng-show="!loading"> 
+  <table class="table">
+    <thead>
+    <th><a href="" ng-click="sortField='fname'; reverse = !reverse">First Name</a></th>
+    <th><a href="" ng-click="sortField='lname'; reverse = !reverse">Last Name</a></th>
+    <th><a href="" ng-click="sortField='address'; reverse = !reverse">Address</a></th>
+    <th><a href="" ng-click="sortField='city'; reverse = !reverse">City</a></th>
+    <th><a href="" ng-click="sortField='zipcode'; reverse = !reverse">Zip Code</a></th>
+    <th><a href="" ng-click="sortField='mnumber'; reverse = !reverse">Mobile Number</a></th>
+    <th><a href="" ng-click="sortField='lnumber'; reverse = !reverse">Home Number</a></th>
+    <th><a href="" ng-click="sortField='relation'; reverse = !reverse">Relation</a></th>
+    <th><a href="" ng-click="sortField='photo'; reverse = !reverse">Photo</a></th>
+    </thead>
+   <tr ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
+<td><a href="{{ contact.fname }}" target="_blank">{{ contact.fname }}</a></td>
+<td>{{ contact.lname }}</td>
+<td>{{ contact.address }}</td>
+<td>{{ contact.city }}</td>
+<td>{{ contact.zipcode }}</td>
+<td>{{ contact.mnumber }}</td>
+<td>{{ contact.lnumber }}</td>
+<td>{{ contact.relation }}</td>
+<td>{{ contact.photo }}</td>
+</tr>
+  </table>
+  </div>
+</div>

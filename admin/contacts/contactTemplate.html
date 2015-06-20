@@ -1,0 +1,55 @@
+
+<div ng-controller="contactDetailController" style="padding-top: 25px;">
+	<div id="loadingDiv" ng-show="loading" class="alert alert-success">
+		Loading, please wait...
+	</div>
+	<div ng-show="!loading">
+		<div class="row">
+			<div class="col-md-6">
+				<table id="detailsTable" class="table">
+					<tr>
+						<th>Team Name:</th>
+						<td>{{ contact.fname }}</td>
+					</tr>
+					<tr>
+						<th>Year Founded:</th>
+						<td>{{ contact.lname }}</td>
+					</tr>
+					<tr>
+						<th>Manager Name:</th>
+						<td>{{ contact.address }}</td>
+					</tr>
+					<tr>
+						<th>City Located:</th>
+						<td>{{ contact.city }}</td>
+					</tr>
+					<tr>
+						<th>Stadium Name:</th>
+						<td>{{ contact.zipcode }}</td>
+					</tr>
+					<tr>
+						<th>Stadium Capacity:</th>
+						<td>{{ team.mnumber }}</td>
+					</tr>
+					<tr>
+						<th>Team Website:</th>
+						<td><a href="{{ contact.lnumber }}" target="_blank">{{ contact.lnumber }}</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<img id="contactBadge" ng-src="contactimg\{{ contact.photo }}" height="250"  />
+			</div>
+		</div>
+			<div class="col-md.12">
+				<p id="realtionPara">{{ contact.relation }}</p>
+			</div>
+
+		<p> 
+			<a href="#/edit/{{ contact.id }}" class="btn btn-info" role="button">Edit Contact</a> 
+			<a href="#/delete/{{ contact.id }}" class="btn btn-danger" role="button">Delete Contact</a>
+		</p>
+
+
+	</div>
+</div>
