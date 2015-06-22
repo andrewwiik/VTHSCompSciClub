@@ -354,17 +354,6 @@
         <div ng-app="contactApp" class="wrapper wrapper-content animated fadeInRight">
         <div ng-view></div>
         <div class="row">
-        <tr ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
-<td><a href="{{ contact.fname }}" target="_blank">{{ contact.fname }}</a></td>
-<td>{{ contact.lname }}</td>
-<td>{{ contact.address }}</td>
-<td>{{ contact.city }}</td>
-<td>{{ contact.zipcode }}</td>
-<td>{{ contact.mnumber }}</td>
-<td>{{ contact.lnumber }}</td>
-<td>{{ contact.relation }}</td>
-<td>{{ contact.photo }}</td>
-        </div>
         </div>
         <div class="footer">
             <div class="pull-right">

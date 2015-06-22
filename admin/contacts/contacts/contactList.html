@@ -26,10 +26,10 @@
                         <p><i class="fa fa-map-marker"></i> {{ contact.city }}, {{ contact.zipcode }}</p>
                         <address>
                          <strong>Contact Info</strong><br>
-                        <i>{{ contact.address }} {{ contact.city }}, {{ contact.zipcode }}</i>
                            M: {{ contact.mnumber }}<br>
                            L: {{ contact.lnumber }}<br>
-                           <div class="truncate">E: {{ contact.email }}</div>
+                           <div class="truncate">E: {{ contact.email }}<br>
+                           <i>{{ contact.address }} {{ contact.city }}, {{ contact.zipcode }}</i></div>
                         </address>
                     </div>
                     <div class="clearfix"></div>
@@ -39,3 +39,10 @@
   </table>
   </div>
 </div>
+<script>
+        $(document).ready(function(){
+            $('.contact-box').each(function() {
+                animationHover(this, 'pulse');
+            });
+        });
+    </script>
