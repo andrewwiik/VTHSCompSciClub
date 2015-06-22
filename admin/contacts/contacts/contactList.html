@@ -23,10 +23,10 @@
                     </div>
                     <div class="col-sm-8">
                         <h3><strong>{{ contact.fname }}  {{ contact.lname }}</strong></h3>
-                        <p><i class="fa fa-map-marker"></i>{{ contact.city }}, {{ contact.zipcode }}</p>
+                        <p><i class="fa fa-map-marker"></i> {{ contact.city }}, {{ contact.zipcode }}</p>
                         <address>
                          <strong>Contact Info</strong><br>
-                         {{ contact.address }} {{ contact.city }}, {{ contact.zipcode }}
+                        <i>{{ contact.address }} {{ contact.city }}, {{ contact.zipcode }}</i>
                            M: {{ contact.mnumber }}<br>
                            L: {{ contact.lnumber }}<br>
                            <div class="truncate">E: {{ contact.email }}</div>
