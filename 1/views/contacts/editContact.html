@@ -1,0 +1,65 @@
+<form class="form-horizontal" ng-controller="editContactController" ng-submit="editContact()">
+	<div class="form-group">
+		<label for="fname" class="col-sm-2 form-label">Team Name:</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" id="fname" ng-model="contactedit.fname" />
+		</div>
+
+		<label for="lname" class="col-sm-2 form-label">Year Founded:</label>
+		<div class="col-sm-4">				
+			<input type="text" class="form-control" id="lname" ng-model="contactedit.lname" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="address" class="col-sm-2 form-label">City Located:</label>
+		<div class="col-sm-4">				
+			<input type="text" class="form-control" id="address" ng-model="contactedit.address" />
+		</div>
+		
+		<label for="city" class="col-sm-2 form-label">Stadium Name:</label>
+		<div class="col-sm-4">				
+			<input type="text" class="form-control" id="city" ng-model="contactedit.city" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="zipcode" class="col-sm-2 form-label">Stadium Capacity:</label>
+		<div class="col-sm-4">				
+			<input type="text" class="form-control" id="capacity" ng-model="contactedit.zipcode" />
+		</div>
+		
+		<label for="mnumber" class="col-sm-2 form-label">Manager Name:</label>
+		<div class="col-sm-4">				
+			<input type="text" class="form-control" id="mnumber" ng-model="contactedit.mnumber" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="lnumber" class="col-sm-2 form-label">Website Link:</label>
+		<div class="col-sm-4">				
+			<input type="text" class="form-control" id="lnumber" ng-model="contactedit.lnumber" />
+		</div>
+	</div>
+	<div class="form-group">
+            <label for="relation" class="col-sm-2 form-label">Details:</label>
+            <div class="col-sm-10">
+                <textarea id="relation" class="form-control" rows="6" ng-model="contactedit.relation" ></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+		<label for="photo" class="col-sm-2 form-label">Club Badge:</label>
+		<div class="col-sm-4" ng-hide="contactedit.photo">				
+			<!-- Custom file read directive added to the input tag -->
+			<input type="file" id="photo" class="form-control"  ng-model="contactedit.photo" fileread="contactSubmit" />
+		</div>
+		<div class="col-sm-4" ng-show="contactedit.photo">
+			<p ng-model="contactedit.photo">{{ contactedit.photo }}</p>
+		</div>
+	</div>
+     <div class="form-group">
+     	<div class="col-sm-12">
+     		<button type="submit" ng-model="submit" class="btn btn-success" name="update" id="update" value="update">Complete Edit</button>
+			<button type="reset" class="btn btn-warning">Reset Form</button>
+     	</div>
+     </div>
+</form>
+</div>

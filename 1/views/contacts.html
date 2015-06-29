@@ -1,0 +1,26 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2>Contacts</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                App Views
+            </li>
+            <li class="active">
+                <strong>Contacts</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div ng-app="contactApp" class="wrapper wrapper-content animated fadeInRight">
+        <div ng-view></div>
+        <div class="row">
+        <tr ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
+</div>
+</div>
+    <script src="js/contactApp.js"></script>
+    <script src="js/contactControllers.js"></script>
+    <script src="js/contactServices.js"></script>
+    <script src="js/contactDirectives.js"></script>

@@ -1,0 +1,48 @@
+<style>
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
+<div ng-controller="contactListController">
+<!-- Div that displays for 3 seconds while the data is pulled in -->
+  <div id="loadingDiv" ng-show="loading" class="alert alert-success">
+    Loading, please wait...
+  </div>
+  <!-- Div that displays after the three second delay. Using AngularJS's data binding to display the team informaiton from the table -->
+  <div ng-show="!loading"> 
+   <div class="col-lg-4 topcontact" ng-repeat="contact in contact | filter:contactFilter | orderBy:sortField:reverse">
+                <div class="contact-box">
+                    <a href="#/detail:{{ contact.id }}">
+                    <div class="col-sm-4">
+                        <div class="text-center">
+                            <img alt="image" class="img-circle m-t-xs img-responsive" src="contacts/{{ contact.photo }}">
+                            <div class="m-t-xs font-bold">{{ contact.relation }}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <h3><strong>{{ contact.fname }}  {{ contact.lname }}</strong></h3>
+                        <address>
+                         <strong>Current Address</strong><br>
+                           {{ contact.address }} {{ contact.city }}, {{ contact.zipcode }}<br>
+                           <strong>Contact Info</strong><br>
+                           <abbr title="Mobile Phone">P:</abbr>  {{ contact.mnumber }} <br>
+                           <abbr title="Home Phone">H:</abbr>  {{ contact.lnumber }} <br>
+                          <div class="truncate">{{ contact.email }}</div>
+                        </address>
+                    </div>
+                    <div class="clearfix"></div>
+                        </a>
+                </div>
+            </div>
+  </table>
+  </div>
+</div>
+<script>
+        $(document).ready(function(){
+            $('.contact-box').each(function() {
+                animationHover(this, 'pulse');
+            });
+        });
+    </script>
