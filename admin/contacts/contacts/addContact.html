@@ -30,14 +30,14 @@
 		
 		<label for="mnumber" class="col-sm-2 form-label">Mobile Number:</label>
 		<div class="col-sm-4">				
-			<input type="text" class="form-control" id="mnumber" ng-model="mnumber" />
+			<input type="text" data-mask="(999) 999-9999" class="form-control" id="mnumber" ng-model="mnumber" />
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="lnumber" class="col-sm-2 form-label">Home Number:</label>
 		<div class="col-sm-4">				
-			<input type="text" value="http://" class="form-control" id="lnumber" ng-model="lnumber" />
+			<input type="text" value="" data-mask="(999) 999-9999" class="form-control" id="lnumber" ng-model="lnumber" />
 		</div>
 		
 		<label for="photo" class="col-sm-2 form-label">Photo:</label>
@@ -69,3 +69,4 @@
      </div>
 </form>
 </div>
+    <script src="../js/plugins/jasny/jasny-bootstrap.min.js"></script>
